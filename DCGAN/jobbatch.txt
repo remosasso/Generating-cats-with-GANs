@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --time=70:00:00
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=25000
+#SBATCH --nodes=1
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=f.ferlito@student.rug.nl
+module load matplotlib/2.1.2-foss-2018a-Python-3.6.4
+module load TensorFlow/1.12.0-foss-2018a-Python-3.6.4
+module load h5py/2.7.1-foss-2018a-Python-3.6.4
+module load scikit-learn/0.19.1-foss-2018a-Python-3.6.4
+module load Pillow
+module load OpenCV/3.4.1-foss-2018a-Python-3.6.4
+python -O DCGAN-1.py <<EOF

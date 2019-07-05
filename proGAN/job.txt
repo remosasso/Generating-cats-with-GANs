@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --time=69:00:00
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=10000
+#SBATCH --nodes=1
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=j.e.reid@student.rug.nl
+#SBATCH --job-name=python_ProGAN
+module load TensorFlow
+pip install --user pillow
+pip install --user absl-py
+python -O /home/s2905248/DL/ProGAN/train.py <<EOF
